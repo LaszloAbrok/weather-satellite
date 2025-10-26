@@ -18,6 +18,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{makecell}
 
 % ===============================
 % Dokumentum adatai
@@ -43,10 +44,10 @@ Az eddig felsorolt műholdak mind analóg információtovábbításra voltak alk
 és anyagi részecskék fluxusának meghatározására.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.35\textwidth]{../resources/tiros.jpg}
-    \caption{TIROS műhold}
-    \label{fig:tiros}
+  \centering
+  \includegraphics[width=0.35\textwidth]{../resources/tiros.jpg}
+  \caption{TIROS műhold}
+  \label{fig:tiros}
 \end{figure}
 
 \subsection*{Műholdpályák}
@@ -55,10 +56,10 @@ A meteorológiai műholdak két fő pályatípuson keringenek: geostacionárius 
 pálya. Ezek a \autoref{fig:geo_leo}-n is láthatóak.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{../resources/orbit-types.png}
-    \caption{GEO és LEO pályák összehasonlítása}
-    \label{fig:geo_leo}
+  \centering
+  \includegraphics[width=0.75\textwidth]{../resources/orbit-types.png}
+  \caption{GEO és LEO pályák összehasonlítása}
+  \label{fig:geo_leo}
 \end{figure}
 
 \subsubsection*{Geostacionárius pálya (GEO)}
@@ -92,9 +93,178 @@ A mérési jegyzőkönyv által ismeretett módszerben egy HackRF SDR veszi a je
 egy kiszajú erősítőre van kötve. A koaxiális kábel egy RSP1A SDR vevőhöz csatlakozik, aminek a kimenetéből származó FM modulált jelből 2,4 kHz-es vivőjű AM modulált jelet kapunk. A kép kinyerését a WXtoImg program segítségével kapjuk meg.
 
 \subsubsection*{GEO pályás műholdak vétele}
-A GEO pályás műholdak esetében is megkülönböztettük a kültéri és beltéri egységet.
+A GEO pályás múholdak látszólag egy helyben állnak az égbolton. Ez lehetővé teszi, hogy a vevőantenna egy fix irányban álljon. A GEO pályás műholdak esetében is megkülönböztettük a kültéri és beltéri egységet. A kültéri egység egy offset parabolaantennából, egy tölcsér-sugárzóval. A jel egy BPF és LNA-n megy keresztül. A beltéri egység pedig további erősítések és szűrés után egy SDR vevőbe kerül.
+A vett BPSK jel demodulációját és feldolgozását itt is a SatDump program segítségével végezzük el.
 
-\section*{Himawari-9 műhold}
+\subsubsection*{EUMETCast}
+Az EUMETCast egy adatelosztó rendszer, amely real-time műholdas adatokat továbbít az egyes felhasználókhoz. A rendszer automatikusan multicast címzést használva juttatja el az adatokat a vevőállomások felé.
+Az adatátvitel műholdakon és földi állomásáokon keresztül történik. Az adatok nem a telemetriát küldő műholdakon keletkezik. Az egyes adatokat földi állomások gyűjtik be, melyeket egy erre létesített adatközpont dolgoz fel.
+Innen az adatokat interneten keresztül vagy műholdas iplinken keresztül kerülnek fel GEO pályás átjátszó műholdra. Innen DVB-S2 szabvány szerint kerülnek továbbításra.
+Lényegében az EUMETCast egy hatékony és gyors múholdas adatmegosztó rendszer.
+
+\section*{NOAA-19}
+A következő alfejezetben egy napszinkron pályán keringő meteorólógiai műholdat, a NOAA-19-et fogom bemutatni.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{../resources/noaa-19.jpg}
+  \caption{NOAA-19 műhold}
+  \label{fig:noaa19}
+\end{figure}
+
+\subsection*{Áttekintés}
+A NOAA-19 egy amerikai meteorológiai műhold, ami a NOAA széria utolsó tagja volt.
+2009 Február 6-án indították útjára a Vandenberg légitámaszpontról. A műhold napszinkron pályán kering és egészen 2025. augusztus 13-ig volt aktív, 14 évvel túlteljesítve az eredeti tervet.
+A műhold apogeuma 866 km, míg perigeuma 846 km 98,7 fokos inklinációval.
+
+\subsection*{Műszerek}
+A NOAA-19 fedélzetén összesen 8 műszer található meg:
+
+\begin{enumerate}
+  \item AVHRR/3 - Advanced Very High Resolution Radiometer
+  \item SBUV/2 - Solar Backscatter Ultraviolet Radiometer
+  \item MHS - Microwave Humidity Sounder
+  \item HIRS/4 - High Resolution Infrared Sounder
+  \item AMSU-A - Advanced Microwave Sounding Unit
+  \item SEM-2 - Space Environment Monitor
+  \item ADCS - Advanced Data Collection System
+  \item SARSAT -Search And Rescue Satellite-Aided Tracking
+\end{enumerate}
+
+\subsubsection*{AVHRR/3}
+Az AVHRR/3 a spektrométer műszer, amely a növényzetet, felhőket és a víztesteket figyeli meg. Összesen 3 csatornával rendelkezik, amelyek a látható, közel infravörös (IR) és hőmérsékleti infravörös tartományokat fedik le.
+A műszernek van egy pásztázó tükre, amely folyamatosan forog 6 rev/s sebességgel, ezzel biztosítva a teljes lefedettséget.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\textwidth]{../resources/avhrr3.jpg}
+  \caption{NOAA-19 AVHRR/3 műszer}
+  \label{fig:noaa19-avhrr}
+\end{figure}
+
+\subsubsection*{SBUV/2}
+A SBUV/2 egy képalkotó és szondázó eszköz. Mint képalkotó eszköz az ózonoszlopot vizsglálja felszín és a légkör teteje között. Ebből lehet következtetni lokális vagy globális ózonkoncentrációra.
+Szondázó eszközként azt mutatja meg, hogy milyen az ózon magasság szerinti eloszlása. A műszer minden csatornája UV-hullmáhosszt érzékel, mely az adott magasságban lévő ózon mennyiségével arányáos.
+A műszer tartalmaz még egy Cloud Cover Radiometer eszközt is, mely a felhőborítottságot méri, ezzel pontosítva az ózonrétegről szóló adatokat.
+
+\subsubsection*{MHS}
+Az MHS egy mikrohullámú rádiós mérő, mely 80-190 GHz közötti frekvenciasávban figyeli a Földet $\pm 50^\circ$ látómezővel.
+A 157 GHz-es és 183 GHz-es csatornák a légköri nedvességprofil mérésére szolgálnak. Eközben a 89 GHz-es csatorna a felszíni hőmérsékletet, emisszivitást, felhő- és csapadékkontaminált pixeleket érzékeli. A műszer legutolsó 2025. augusztus 11-én végzett mérése a \autoref{fig:noaa19-mhs} képen látható.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{../resources/mhs.jpg}
+  \caption{MHS által szolgáltaott hőmérséklettérkép 2025. augusztus 11-én}
+  \label{fig:noaa19-mhs}
+\end{figure}
+
+
+\subsubsection*{HIRS/4}
+A HIRS/4 egy nagyfelbontású 20 csatornás infravörös szonda. A mérései lehetővé teszik számos légköri profil előállítását pl. hőmérséklet, ózon, vízgőz.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\textwidth]{../resources/hirs4.jpg}
+  \caption{NOAA-19 HIRS/4 műszer}
+  \label{fig:noaa19-hirs}
+\end{figure}
+
+\subsubsection*{AMSU-A}
+Az AMSU-A egy 15 csatornás 54 GHz-en működő mikrohullámú szonda, mely a felsőlégkör hőmrésékleti profiljának előállítására szolgál.
+
+\subsubsection*{SEM-2}
+A SEM-2 egy olyan spektrométer, melyek a Föld sugárzási öveinek mértékét és a töltött részecskék fluxusát mérik a műhold magasságában. Segítségével előrejelezhetőek a napszél események.
+
+\subsubsection*{A-DCS}
+Az A-DCS a CNES által fejlesztett adatgyűjtő rendszer, mely olyan általános környezeti paramétereket vizsgál, mint pl. a légköri hőmérséklet, nyomás valamint az óceáni áramlások. Az adatokat különböző földi mérésekből gyűjtik.
+Ilyenek lehetnek pl. bóják, ballonok, meteorológiai állomások vagy akár vándorló állatokra aggatott jeladók (teknps, medve stb.). Ezeket együttesen DCP-nek, azaz Data Collection Platformnak nevezzük.
+A vevő frekvenciája 401,65 MHz. A DCP-k által gyűjtött adatokat a műholdra küldik és ott tárolódnak el. Majd amikor a műhold egy földi állomás fölé ér, akkor továbbítja az adatokat.
+
+\subsubsection*{SARSAT}
+A SARSAT rendszer vészhelyzeti jeladók által küldött jeleket észlel.
+A rendszer két fő részből a SARR (Search and Rescue Repeater) és SARP (Search and Rescue Processor) áll. A műholdak ezeket a jeleket továbbítják a földi vevőállomásokhoz, ahol a Doppler-eltoldást kihasználva meghatározzák a vészjelzés helyét.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.35\textwidth]{../resources/beacon.jpg}
+  \caption{SARSAT által fogadni képes vészjelző adók}
+  \label{fig:noaa19-sarsat}
+\end{figure}
+
+\subsubsection*{NOAA sorozat utódjai}
+
+
+\subsection*{Kommunikáció}
+A \autoref{tab:noaa19-comms} táblázatban láthatóak a NOAA-19 üzemeltetését biztosító kommunikációs csatornák pl. Data Collection Platform, Search & Rescue vészjelzések, valamint a telemetria és telekommand.
+A \autoref{tab:noaa19-sensing} táblázat a különböző passzív távérzékelő műszerek által használt frekvenciákat mutatja be. Végül a \autoref{tab:noaa19-data} táblázat azt mutatja be, hogy a különböző adatátviteli szolgáltatások, mint pl. a HRPT, vagy APT milyen képi vagy mérési adatok továbbítását végzik milyen adatsebességel.
+
+\begin{table}[H]
+  \centering
+  \caption{Műholdszolgáltatás üzemelésére szolgáló frekvenciák és jellemzők (mind digitális adatátvitel)}
+  \label{tab:noaa19-comms}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \makecell{\textbf{Szolgáltatás}}     &
+    \makecell{\textbf{Frek.}                                                \\ \textbf{(MHz)}} &
+    \makecell{\textbf{Sávszél}                                              \\ \textbf{(kHz)}} &
+    \textbf{Polarizáció}                 &
+    \makecell{\textbf{Adatseb. (kbps)}                                      \\ \textbf{/ Alapsáv (kHz)}} \\ \hline
+
+    \makecell{DCP                                                           \\ jelentések} & 401,65 & 4 & RHCP & 0,400 kbps \\ \hline
+    \makecell{DCP                                                           \\ parancsok} & 465,9875 & 5 & RHCP & 0,400 kbps \\ \hline
+    \makecell{S \& RSAT                                                     \\ (vészjelzések)} & 406,05 & 4 & RHCP & 0,400 kbps \\ \hline
+    \makecell{S \& RSAT                                                     \\ (Vészjelzések GND felé)} & 1544,5 & 750 & RHCP & 0,400 kbps \\ \hline
+    \makecell{Telekommand}               & 2026,0 & 2000 & RHCP & 2,0 kbps  \\ \hline
+    \makecell{Telemetria és telekommand} & 2247,5 & 6000 & RHCP & 8,32 kbps \\ \hline
+  \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Passzív érzékelésen alapú Földmegfigyelésre alkalamzott frekvenciák}
+  \label{tab:noaa19-sensing}
+  \begin{tabular}{|l|c|c|c|c|l|}
+    \hline
+    \textbf{Szolgáltatás} & \textbf{Frek. (GHz)} & \textbf{Sávszél (MHz)} & \textbf{Polarizáció} & \textbf{Csatornák}  \\ \hline
+    AMSU-A                & 23.8s                & 270                    & V                    & Vízgőz              \\ \hline
+    AMSU-A                & 31.4                 & 180                    & V                    & Atmoszférikus ablak \\ \hline
+    AMSU-A                & 50.12–57.62          & –                      & H/V                  & Oxigén, 12 csat.    \\ \hline
+    AMSU-A                & 89                   & 6000                   & V                    & Atmoszférikus ablak \\ \hline
+    MHS                   & 89                   & 2800                   & V                    & Atmoszférikus ablak \\ \hline
+    MHS                   & 157                  & 2800                   & V                    & Gyenge vízgőz       \\ \hline
+    MHS                   & 185.31               & 12000                  & H/V                  & Vízgőz, 3 channels  \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Adatátviteli szolgáltatások frekvenciái}
+  \label{tab:noaa19-data}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \makecell{\textbf{Frek.}                                                            \\ \textbf{(MHz)}} &
+    \makecell{\textbf{Sávszél}                                                          \\ \textbf{(kHz)}} &
+    \textbf{Polarizáció} &
+    \textbf{D/A}         &
+    \makecell{\textbf{Adatsebesség (kbps)}                                              \\ \textbf{vagy Alapsáv (kHz)}} &
+    \makecell{\textbf{Mire}                                                             \\ \textbf{használják?}} \\ \hline
+
+    2247.5               & 2000 & RHCP & D & 2660 & \makecell{CDA – Globális és lokális \\ adatok} \\ \hline
+    1702.5               & 4000 & LHCP & D & 665  & \makecell{HRPT – Teljes             \\ információs adatok} \\ \hline
+    1698                 & 4000 & RHCP & D & 665  & \makecell{HRPT – Teljes             \\ információs adatok} \\ \hline
+    1707                 & 4000 & RHCP & D & 665  & \makecell{HRPT – Teljes             \\ információs adatok} \\ \hline
+    137.35               & 38   & RHCP & A & 1.7  & \makecell{APT – Csökkentett         \\ felbontású képek} \\ \hline
+    137.77               & 38   & RHCP & A & 1.7  & \makecell{APT – Csökkentett         \\ felbontású képek} \\ \hline
+    137.1                & 38   & RHCP & A & 1.7  & \makecell{APT – Csökkentett         \\ felbontású képek} \\ \hline
+    137.9125             & 38   & RHCP & A & 1.7  & \makecell{APT – Csökkentett         \\ felbontású képek} \\ \hline
+    137.35               & 46   & RHCP & D & 8.32 & \makecell{DSB – TIP                 \\ adatok} \\ \hline
+    137.77               & 46   & RHCP & D & 8.32 & \makecell{DSB – TIP                 \\ adatok} \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsection*{NOAA helyettesítő műholdak}
+
+A NOAA műholdakat a Joint Polar Satellite System hivatott leváltani, melynek első két példányát 2017-ben és 2022-ben bocsátották fel. Ezeket a műholdakat modernebb műszerekkel és jobb adatsebességgel látják el feladataikat.
 
 Felhasznált irodalom:\\
 Űrtechnológia laboratórium 2 - Laboratóriumi mérési űtmutató\\
