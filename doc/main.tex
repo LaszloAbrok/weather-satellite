@@ -34,20 +34,20 @@
 \maketitle
 
 \section*{Bevezetés}
-Az esszé célja, hogy bemutassa a "Meteorológia műholdak vétele" laborotatórium segédanyagai áltlal szolgáltatott ismereteket. Ezen túl a szöveg, a segédlet által felvázolt szempontrendszer alapján ismertet is egy konkrét műholdat.
+Az esszé célja, hogy bemutassa a "Meteorológia műholdak vétele" laborotatórium segédanyagai áltlal szolgáltatott ismereteket. Ezen túl a szöveg, a segédlet által felvázolt szempontrendszer alapján ismerteti a NOAA-19 meteorólógiai műholdat.
 
 \section*{Meteorológia műholdak}
 A különböző légköri folyamatok vizsgálatára és előrejelzésére mhűholdas légköri megfigyeléseket alkalmazunk. Az első meteorológiai műholdat, 1960. április 1-jén bocsátották fel.
-Ez volt az \autoref{fig:tiros}-en is látható amerikai TIROS-1 (Television Infrared Observation Satellite). A TIROS műholdcsaládot a Nimbus műholdcsalád követte. Eközben a Szovjetunió is elkezdte a megfigyeléseket az 1966-tól üzemelő Kozmosz műholdakkal.
-Az első operatív műholdsorozat a napszinkron pályán keringő 9 tagból álló ESS (    Environmental Science Services Administration) műholdak jelentették. Ez a konstelláció 9 műholdból állt, melynek páros számú tagjai automatikusan, páratlan tagjai lehívásra igény szerint közöltek adatokat.
+Ez volt az \autoref{fig:tiros-1}-en is látható amerikai TIROS-1 (Television Infrared Observation Satellite). A TIROS műholdcsaládot a Nimbus műholdcsalád követte. Eközben a Szovjetunió is elkezdte a megfigyeléseket az 1966-tól üzemelő Kozmosz műholdakkal.
+Az első operatív műholdsorozat a napszinkron pályán keringő 9 tagból álló ESS műholdak jelentették. Ez a konstelláció 9 műholdból állt, melynek páros számú tagjai automatikusan, páratlan tagjai lehívásra igény szerint közöltek adatokat.
 Az eddig felsorolt műholdak mind analóg információtovábbításra voltak alkalmasak. A digitális adattovábbításra képes első operatív széria az ITOS műholdcsalád volt. Ezek a műholdak már képesek voltak a hőmérséklet, a nedvesség függőleges profiljának, a teljes ózontartalomnak
-és anyagi részecskék fluxusának meghatározására.
+és anyagi részecskék fluxusának meghatározására.\cite{almarurtan}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.35\textwidth]{../resources/tiros.jpg}
-  \caption{TIROS műhold}
-  \label{fig:tiros}
+  \caption{TIROS műhold \cite{nasmmuseum_tiros1960}}
+  \label{fig:tiros-1}
 \end{figure}
 
 \subsection*{Műholdpályák}
@@ -58,24 +58,24 @@ pálya. Ezek a \autoref{fig:geo_leo}-n is láthatóak.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{../resources/orbit-types.png}
-  \caption{GEO és LEO pályák összehasonlítása}
+  \caption{GEO és LEO pályák összehasonlítása \cite{panwar2021indiaspaceprogramme}}
   \label{fig:geo_leo}
 \end{figure}
 
 \subsubsection*{Geostacionárius pálya (GEO)}
 A geoszinkron pályák, olyan pályák melyeknél a keringési idő megegyezik a Föld sziderikus (állócsillagokhoz képes mért) tengelyforgási idejével. A geoszinkron pályák eseténben adott helyi időkor egy ideig minden nap pontosan ugyanazon a földrajzi hely fölött halad.
-A geostacionárius pálya a geoszinkron pályák egy speciális esete, amikor is a félnagytengely 42163 km, excentricitás 0, és inklináció 0 fok. Így a Föld felszínéhez képest állandó helyzetben látszik.
+A geostacionárius pálya a geoszinkron pályák egy speciális esete, amikor is a félnagytengely 42163 km, excentricitás 0, és inklináció 0 fok. Így a Föld felszínéhez képest állandó helyzetben látszik.\cite{almarurtan}
 
-A GEO pályán keringő műholdak nagy technikai előnye, hogy nincs szükség antennaforgatóra, egy fix irányba állított antennával is lehet venni és az év csak rövid szakaszában lehet venni.
-Hátránya, hogy ebben a nagyobb keringési magasság miatt nagyobb antennanyereség szükséges, valamint ugyanazon mérések kisebb felbontással üzemelnek, mint a LEO pályán.
+A GEO pályán keringő műholdak nagy technikai előnye, hogy nincs szükség antennaforgatóra, egy fix irányba állított antennával is lehet venni és az év csak rövid szakaszában nem lehet venni.
+Hátránya, hogy ebben a nagyobb keringési magasság miatt nagyobb antennanyereség szükséges, valamint ugyanazon mérések kisebb felbontással üzemelnek, mint a LEO pályán.\cite{labor2guide}
 
 \subsubsection*{Alacsony Föld körüli pálya (LEO)}
 
 A LEO pályák, olyan pályák melyek magassága 200-2000 km között van. Az itt keringő műholdak keringési ideje 1,5-2 óra között van. Így egy nap alatt többször is megkerülik a Földet. A GEO pályához képest viszonylag kis területet látnak be, de azt sokkal nagyobb felbontásban.
 A LEO pályák egy speciális esete a nap-szinkron (SSO) pálya. Ilyenkor a műhold Naphoz viszonyított helyzete állandó, azaz áthaladáskor ugyanabban a helyi időben halad el adott koordináta felett, azonos megvilágítási viszonyok mellett. Mivel a sarkok felett halad el, ezért napjában 2-szer teljesen végigpásztázza a Föld felszínét.
-Azonban ilyenkor antennaforgatót kell alkalmazni.
+Azonban ilyenkor antennaforgatót kell alkalmazni.\cite{labor2guide}
 
-\subsection*{Műholdak vétele}
+\subsection*{Műholdak vétele \cite{labor2guide}}
 
 \subsubsection*{LEO pályás műholdak vétele}
 
@@ -85,22 +85,22 @@ Ezzel szemben 1,7 GHz-en digitális adatátivetelt valósítottak meg BPSK vagy 
 
 Egy pályakövető rendszer két fő részből áll: beltéri és kültéri egység.
 
-A beltéri egység áll egy 1,5 m átmérőjű parabololantennából, polarizált patch sugárzóval, egy BPF szűrőbőé és egy kiszajú erősítőből.
-A vételi egység folyamatosan meghatározza az azimutot és elevációt ezzel lekövetke a műholdat.
+A beltéri egység áll egy 1,5 m átmérőjű parabololantennából, polarizált patch sugárzóval, egy BPF szűrőből és egy kiszajú erősítőből.
+A vételi egység folyamatosan meghatározza az azimutot és elevációt, ezzel lekövetke a műholdat.
 A mérési jegyzőkönyv által ismeretett módszerben egy HackRF SDR veszi a jelet. A digitalizált jelet számítógépen dolgozzuk fel. Erre egy alkalmas nyílt forráskódú program a Sat-Dump.
 
-137 MHz-en egyszerűbb a vételi oldal felépítése. A mérési segédlet egy kételemes Yagi-Uda antennával való vételt ismertet. Ekkor az antenna fixen zenitre van irányítva. Az entenna kimenete ismét egy BPF szűrőre valamint
+137 MHz-en egyszerűbb a vételi oldal felépítése. A mérési segédlet egy kételemes Yagi-Uda antennával való vételt ismertet. Ekkor az antenna fixen zenitre van irányítva. Az antenna kimenete ismét egy BPF szűrőre valamint
 egy kiszajú erősítőre van kötve. A koaxiális kábel egy RSP1A SDR vevőhöz csatlakozik, aminek a kimenetéből származó FM modulált jelből 2,4 kHz-es vivőjű AM modulált jelet kapunk. A kép kinyerését a WXtoImg program segítségével kapjuk meg.
 
 \subsubsection*{GEO pályás műholdak vétele}
-A GEO pályás múholdak látszólag egy helyben állnak az égbolton. Ez lehetővé teszi, hogy a vevőantenna egy fix irányban álljon. A GEO pályás műholdak esetében is megkülönböztettük a kültéri és beltéri egységet. A kültéri egység egy offset parabolaantennából, egy tölcsér-sugárzóval. A jel egy BPF és LNA-n megy keresztül. A beltéri egység pedig további erősítések és szűrés után egy SDR vevőbe kerül.
+A GEO pályás múholdak látszólag egy helyben állnak az égbolton. Ez lehetővé teszi, hogy a vevőantenna egy fix irányban álljon. A GEO pályás műholdak esetében is megkülönböztettük a kültéri és beltéri egységet. A kültéri egység egy tölcsér-sugárzóval ellátott offset parabolaantennából áll. A jel egy BPF és LNA-n megy keresztül. A beltéri egység pedig további erősítések és szűrés után egy SDR vevőbe kerül.
 A vett BPSK jel demodulációját és feldolgozását itt is a SatDump program segítségével végezzük el.
 
 \subsubsection*{EUMETCast}
 Az EUMETCast egy adatelosztó rendszer, amely real-time műholdas adatokat továbbít az egyes felhasználókhoz. A rendszer automatikusan multicast címzést használva juttatja el az adatokat a vevőállomások felé.
 Az adatátvitel műholdakon és földi állomásáokon keresztül történik. Az adatok nem a telemetriát küldő műholdakon keletkezik. Az egyes adatokat földi állomások gyűjtik be, melyeket egy erre létesített adatközpont dolgoz fel.
-Innen az adatokat interneten keresztül vagy műholdas iplinken keresztül kerülnek fel GEO pályás átjátszó műholdra. Innen DVB-S2 szabvány szerint kerülnek továbbításra.
-Lényegében az EUMETCast egy hatékony és gyors múholdas adatmegosztó rendszer.
+Innen az adatokat interneten keresztül vagy műholdas uplinken keresztül kerülnek fel GEO pályás átjátszó műholdra. Innen DVB-S2 szabvány szerint kerülnek továbbításra.
+Lényegében az EUMETCast egy hatékony és gyors műholdas adatmegosztó rendszer.
 
 \section*{NOAA-19}
 A következő alfejezetben egy napszinkron pályán keringő meteorólógiai műholdat, a NOAA-19-et fogom bemutatni.
@@ -114,25 +114,14 @@ A következő alfejezetben egy napszinkron pályán keringő meteorólógiai mű
 \subsection*{Áttekintés}
 A NOAA-19 egy amerikai meteorológiai műhold, ami a NOAA széria utolsó tagja volt.
 2009 Február 6-án indították útjára a Vandenberg légitámaszpontról. A műhold napszinkron pályán kering és egészen 2025. augusztus 13-ig volt aktív, 14 évvel túlteljesítve az eredeti tervet.
-A műhold apogeuma 866 km, míg perigeuma 846 km 98,7 fokos inklinációval.
+A műhold apogeuma 857 km, míg perigeuma 838 km 98,9 fokos inklinációval. \cite{noaa19_heavensabove}
 
 \subsection*{Műszerek}
 A NOAA-19 fedélzetén összesen 8 műszer található meg:
 
-\begin{enumerate}
-  \item AVHRR/3 - Advanced Very High Resolution Radiometer
-  \item SBUV/2 - Solar Backscatter Ultraviolet Radiometer
-  \item MHS - Microwave Humidity Sounder
-  \item HIRS/4 - High Resolution Infrared Sounder
-  \item AMSU-A - Advanced Microwave Sounding Unit
-  \item SEM-2 - Space Environment Monitor
-  \item ADCS - Advanced Data Collection System
-  \item SARSAT -Search And Rescue Satellite-Aided Tracking
-\end{enumerate}
-
 \subsubsection*{AVHRR/3}
 Az AVHRR/3 a spektrométer műszer, amely a növényzetet, felhőket és a víztesteket figyeli meg. Összesen 3 csatornával rendelkezik, amelyek a látható, közel infravörös (IR) és hőmérsékleti infravörös tartományokat fedik le.
-A műszernek van egy pásztázó tükre, amely folyamatosan forog 6 rev/s sebességgel, ezzel biztosítva a teljes lefedettséget.
+A műszernek van egy pásztázó tükre, amely folyamatosan forog 6 rev/s sebességgel, ezzel biztosítva a teljes lefedettséget.\cite{esa_avhrr3}
 
 \begin{figure}[H]
   \centering
@@ -142,24 +131,24 @@ A műszernek van egy pásztázó tükre, amely folyamatosan forog 6 rev/s sebess
 \end{figure}
 
 \subsubsection*{SBUV/2}
-A SBUV/2 egy képalkotó és szondázó eszköz. Mint képalkotó eszköz az ózonoszlopot vizsglálja felszín és a légkör teteje között. Ebből lehet következtetni lokális vagy globális ózonkoncentrációra.
+A SBUV/2 egy képalkotó és szondázó eszköz. Mint képalkotó eszköz az ózonoszlopot vizsglálja a felszín és a légkör teteje között. Ebből lehet következtetni lokális vagy globális ózonkoncentrációra.
 Szondázó eszközként azt mutatja meg, hogy milyen az ózon magasság szerinti eloszlása. A műszer minden csatornája UV-hullmáhosszt érzékel, mely az adott magasságban lévő ózon mennyiségével arányáos.
-A műszer tartalmaz még egy Cloud Cover Radiometer eszközt is, mely a felhőborítottságot méri, ezzel pontosítva az ózonrétegről szóló adatokat.
+A műszer tartalmaz még egy Cloud Cover Radiometer eszközt is, mely a felhőborítottságot méri, ezzel pontosítva az ózonrétegről szóló adatokat.\cite{flynn2023sbuv2}
 
 \subsubsection*{MHS}
 Az MHS egy mikrohullámú rádiós mérő, mely 80-190 GHz közötti frekvenciasávban figyeli a Földet $\pm 50^\circ$ látómezővel.
-A 157 GHz-es és 183 GHz-es csatornák a légköri nedvességprofil mérésére szolgálnak. Eközben a 89 GHz-es csatorna a felszíni hőmérsékletet, emisszivitást, felhő- és csapadékkontaminált pixeleket érzékeli. A műszer legutolsó 2025. augusztus 11-én végzett mérése a \autoref{fig:noaa19-mhs} képen látható.
+A 157 GHz-es és 183 GHz-es csatornák a légköri nedvességprofil mérésére szolgálnak.\cite{eumetsat_mhs} Eközben a 89 GHz-es csatorna a felszíni hőmérsékletet, emisszivitást, felhő- és csapadékkontaminált pixeleket érzékeli. A műszer legutolsó 2025. augusztus 11-én végzett mérése a \autoref{fig:noaa19-mhs} képen látható.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{../resources/mhs.jpg}
-  \caption{MHS által szolgáltaott hőmérséklettérkép 2025. augusztus 11-én}
+  \caption{MHS által szolgáltaott hőmérséklettérkép 2025. augusztus 11-én\cite{noaa_star_n19_mhs}}
   \label{fig:noaa19-mhs}
 \end{figure}
 
 
 \subsubsection*{HIRS/4}
-A HIRS/4 egy nagyfelbontású 20 csatornás infravörös szonda. A mérései lehetővé teszik számos légköri profil előállítását pl. hőmérséklet, ózon, vízgőz.
+A HIRS/4 egy nagyfelbontású 20 csatornás infravörös szonda. A mérései lehetővé teszik számos légköri profil előállítását pl. hőmérséklet, ózon, vízgőz.\cite{l3harris_hirs4}
 
 \begin{figure}[H]
   \centering
@@ -169,20 +158,20 @@ A HIRS/4 egy nagyfelbontású 20 csatornás infravörös szonda. A mérései leh
 \end{figure}
 
 \subsubsection*{AMSU-A}
-Az AMSU-A egy 15 csatornás 54 GHz-en működő mikrohullámú szonda, mely a felsőlégkör hőmrésékleti profiljának előállítására szolgál.
+Az AMSU-A egy 15 csatornás 54 GHz-en működő mikrohullámú szonda, mely a felsőlégkör hőmrésékleti profiljának előállítására szolgál.\cite{noaa2024amsua}
 
 \subsubsection*{SEM-2}
-A SEM-2 egy olyan spektrométer, melyek a Föld sugárzási öveinek mértékét és a töltött részecskék fluxusát mérik a műhold magasságában. Segítségével előrejelezhetőek a napszél események.
+A SEM-2 egy olyan spektrométer, melyek a Föld sugárzási öveinek mértékét és a töltött részecskék fluxusát mérik a műhold magasságában. Segítségével előrejelezhetőek a napszél események.\cite{noaa_sem}
 
 \subsubsection*{A-DCS}
 Az A-DCS a CNES által fejlesztett adatgyűjtő rendszer, mely olyan általános környezeti paramétereket vizsgál, mint pl. a légköri hőmérséklet, nyomás valamint az óceáni áramlások. Az adatokat különböző földi mérésekből gyűjtik.
-Ilyenek lehetnek pl. bóják, ballonok, meteorológiai állomások vagy akár vándorló állatokra aggatott jeladók (teknps, medve stb.). Ezeket együttesen DCP-nek, azaz Data Collection Platformnak nevezzük.
-A vevő frekvenciája 401,65 MHz. A DCP-k által gyűjtött adatokat a műholdra küldik és ott tárolódnak el. Majd amikor a műhold egy földi állomás fölé ér, akkor továbbítja az adatokat.
+Ilyen adatokat szolgáltathatnak pl. bóják, ballonok, meteorológiai állomások vagy akár vándorló állatokra aggatott jeladók (teknős, medve stb.). Ezeket együttesen DCP-nek, azaz Data Collection Platformnak nevezzük.
+A vevő frekvenciája 401,65 MHz. A DCP-k által gyűjtött adatokat a műholdra küldik és ott tárolódnak el. Majd amikor a műhold egy földi állomás fölé ér, akkor továbbítja az adatokat.\cite{eoportal_argos_dcs}
 
 \subsubsection*{SARSAT}
 A SARSAT rendszer vészhelyzeti jeladók által küldött jeleket észlel.
-A rendszer két fő részből a SARR (Search and Rescue Repeater) és SARP (Search and Rescue Processor) áll. A műholdak ezeket a jeleket továbbítják a földi vevőállomásokhoz, ahol a Doppler-eltoldást kihasználva meghatározzák a vészjelzés helyét.
-
+A rendszer két fő részből a SARR-ból (Search and Rescue Repeater) és SARP-ból (Search and Rescue Processor) áll. A műholdak ezeket a jeleket továbbítják a földi vevőállomásokhoz, ahol a Doppler-eltoldást kihasználva meghatározzák a vészjelzés helyét. \cite{sarsat_workshop_2024}
+Ilyen vészhelyzeti jeladók láthatók a \autoref{fig:noaa19-sarsat}-en.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.35\textwidth]{../resources/beacon.jpg}
@@ -190,12 +179,9 @@ A rendszer két fő részből a SARR (Search and Rescue Repeater) és SARP (Sear
   \label{fig:noaa19-sarsat}
 \end{figure}
 
-\subsubsection*{NOAA sorozat utódjai}
-
-
 \subsection*{Kommunikáció}
-A \autoref{tab:noaa19-comms} táblázatban láthatóak a NOAA-19 üzemeltetését biztosító kommunikációs csatornák pl. Data Collection Platform, Search & Rescue vészjelzések, valamint a telemetria és telekommand.
-A \autoref{tab:noaa19-sensing} táblázat a különböző passzív távérzékelő műszerek által használt frekvenciákat mutatja be. Végül a \autoref{tab:noaa19-data} táblázat azt mutatja be, hogy a különböző adatátviteli szolgáltatások, mint pl. a HRPT, vagy APT milyen képi vagy mérési adatok továbbítását végzik milyen adatsebességel.
+A \autoref{tab:noaa19-comms}-on láthatóak a NOAA-19 üzemeltetését biztosító kommunikációs csatornák pl. Data Collection Platform, Search and Rescue vészjelzések, valamint a telemetria és telekommand.
+A \autoref{tab:noaa19-sensing} a különböző passzív távérzékelő műszerek által használt frekvenciákat mutatja be. Végül a \autoref{tab:noaa19-data} azt mutatja be, hogy a különböző adatátviteli szolgáltatások, mint pl. a HRPT, vagy APT milyen képi vagy mérési adatok továbbítását végzik milyen adatsebességel.\cite{noaa19_oscar}
 
 \begin{table}[H]
   \centering
@@ -264,9 +250,57 @@ A \autoref{tab:noaa19-sensing} táblázat a különböző passzív távérzékel
 
 \subsection*{NOAA helyettesítő műholdak}
 
-A NOAA műholdakat a Joint Polar Satellite System hivatott leváltani, melynek első két példányát 2017-ben és 2022-ben bocsátották fel. Ezeket a műholdakat modernebb műszerekkel és jobb adatsebességgel látják el feladataikat.
+A NOAA műholdakat a Joint Polar Satellite System hivatott leváltani, melynek első két példányát 2017-ben és 2022-ben bocsátották fel. Ezeket a műholdakat modernebb műszerekkel és jobb adatsebességgel látják el feladataikat.\cite{noaa_jpss4}
 
-Felhasznált irodalom:\\
-Űrtechnológia laboratórium 2 - Laboratóriumi mérési űtmutató\\
-Almár - Both - Horváth - Szabó: SH atlasz, Űrtan
+
+\subsection*{Rövidítésjegyzék}
+
+\begin{itemize}
+  \item \textbf{GEO} – Geostacionárius pálya
+  \item \textbf{LEO} – Alacsony Föld körüli pálya
+  \item \textbf{SSO} – Napszinkron pálya
+  \item \textbf{RHCP} – Right-Hand Circular Polarization
+  \item \textbf{LHCP} – Left-Hand Circular Polarization
+  \item \textbf{FM} – Frekvencia moduláció
+  \item \textbf{AM} – Amplitúdó moduláció
+  \item \textbf{IR} – Infravörös
+  \item \textbf{UV} – Ultraibolya
+  \item \textbf{TIROS} – Television Infrared Observation Satellite
+  \item \textbf{ESS} – Environmental Science Services Administration
+  \item \textbf{ITOS} – Improved TIROS Operating System
+  \item \textbf{EUMETCast} – EUMETSAT Meteorological Data Broadcast System
+  \item \textbf{DVB-S2} – Digital Video Broadcasting - Satellite - Second Generation
+  \item \textbf{NOAA} – National Oceanic and Atmospheric Administration
+  \item \textbf{JPSS} – Joint Polar Satellite System
+  \item \textbf{CNES} – Centre National d'Études Spatiales (Francia Űrügynökség)
+  \item \textbf{AVHRR/3} – Advanced Very High Resolution Radiometer
+  \item \textbf{SBUV/2} – Solar Backscatter Ultraviolet Radiometer
+  \item \textbf{MHS} – Microwave Humidity Sounder
+  \item \textbf{HIRS/4} – High Resolution Infrared Sounder
+  \item \textbf{AMSU-A} – Advanced Microwave Sounding Unit
+  \item \textbf{SEM-2} – Space Environment Monitor
+  \item \textbf{A-DCS} – Advanced Data Collection System
+  \item \textbf{DCP} – Data Collection Platform
+  \item \textbf{SARSAT} – Search And Rescue Satellite-Aided Tracking
+  \item \textbf{SARR} – Search and Rescue Repeater
+  \item \textbf{SARP} – Search and Rescue Processor
+  \item \textbf{LNA} – Low Noise Amplifier, kiszajú erősítő
+  \item \textbf{BPF} – Band Pass Filter, sávszűrő
+  \item \textbf{SDR} – Software Defined Radio
+  \item \textbf{BPSK} – Binary Phase Shift Keying
+  \item \textbf{QPSK} – Quadrature Phase Shift Keying
+  \item \textbf{CDA} – Command and Data Acquisition
+  \item \textbf{HRPT} – High Resolution Picture Transmission
+  \item \textbf{APT} – Automatic Picture Transmission
+  \item \textbf{DSB} – Direct Sounder Broadcast
+  \item \textbf{TIP} – TIROS Information Processor
+  \item \textbf{S \& RSAT} – Search and Rescue Satellite
+  \item \textbf{D/A} – Digitális / Analóg
+\end{itemize}
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+
 \end{document}
